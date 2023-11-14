@@ -52,7 +52,8 @@ int main(void) {
            " value = %d",
            &localVar, localVar);
     printf("\n [Parent] :: globalVar address = %p,"
-           " value = %d", &globalVar, globalVar);
+           " value = %d",
+           &globalVar, globalVar);
     printf("\n [Parent] Address of malloced mem parent= %p "
            "and value is %d",
            p, *p);

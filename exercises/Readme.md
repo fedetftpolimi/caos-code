@@ -2,6 +2,7 @@
 ## Exercise session 01
 ### File system
 
+#### Intro
 1. [Symbolic link](filesystem/intro1.c)
 2. [Unlink](filesystem/intro2.c)
 3. [Write to file](filesystem/intro3.c)
@@ -14,6 +15,11 @@
 3. [List extensions w/ strcmp](filesystem/listextension.c)
 
 ### Processes
-1. [Shell](filesystem/shell.c)
-2. [Memory sharing](filesystem/var_sharing.c)
- 
+#### Intro
+1. [Fork w/ exec](processes/fork.c)
+2. [Fork and pid](processes/forkpid.c)
+
+#### Advanced
+1. [Zombie](processes/zombie.c)
+2. [Shell](filesystem/shell.c)
+3. [Memory sharing](filesystem/var_sharing.c)
