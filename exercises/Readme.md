@@ -14,6 +14,6 @@
 3. [List extensions w/ strcmp](filesystem/listextension.c)
 
 ### Processes
-1. [Shell](filesystem/shell_fix.c)
+1. [Shell](filesystem/shell.c)
 2. [Memory sharing](filesystem/var_sharing.c)
  

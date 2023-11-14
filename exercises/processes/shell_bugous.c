@@ -11,34 +11,24 @@ int main() {
 
   while (1) {
     // Prompt for a command
-    printf("Mini-Shell> ");
+    printf("My-Tiny-Shell> ");
     scanf("%s", command);
-
-    // Exit the loop if the command is "exit"
     if (strcmp(command, "exit") == 0) {
-      printf("Exiting mini-shell.\n");
-      break;
+      printf("Exiting.\n");
+      return 0;
     }
-
     // Fork a new process
-    pid_t child_pid = fork();
-
-    if (child_pid == -1) {
-      perror("Error forking");
+    pid_t pid = fork();
+    if (pid == -1) {
+      printf("Error forking");
       exit(EXIT_FAILURE);
     }
-
-    if (child_pid == 0) {
+    if (pid == 0) {
       // Child process
       execlp(command, command, NULL);
-      perror("Error in exec");
+      printf("Error in exec");
       exit(EXIT_FAILURE);
-    } else {
-      // Parent process (no wait)
-      // No wait for the child process
-      // Bug: This may result in the parent printing the prompt before the child has finished
     }
   }
-
   return 0;
 }
