@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
-#include <sys/wait.h>
 #include <unistd.h>
 
+#define MAX_COMMAND_LENGTH 100
+
 int main() {
-  char command[100];
+  char command[MAX_COMMAND_LENGTH];
 
   while (1) {
     // Prompt for a command
-    printf("My-Tiny-Shell> ");
+    printf("Mini-Shell> ");
     scanf("%s", command);
 
     // Exit the loop if the command is "exit"
@@ -23,25 +24,19 @@ int main() {
     pid_t child_pid = fork();
 
     if (child_pid == -1) {
-      printf("Error forking");
+      perror("Error forking");
       exit(EXIT_FAILURE);
     }
 
     if (child_pid == 0) {
       // Child process
       execlp(command, command, NULL);
-      printf("Error in exec");
+      perror("Error in exec");
       exit(EXIT_FAILURE);
     } else {
-      // Parent process
-      int status;
-      waitpid(child_pid, &status, 0);
-
-      if (WIFEXITED(status)) {
-        printf("Child process exited with status %d.\n", WEXITSTATUS(status));
-      } else {
-        printf("Child process did not exit normally.\n");
-      }
+      // Parent process (no wait)
+      // No wait for the child process
+      // Bug: This may result in the parent printing the prompt before the child has finished
     }
   }
 
