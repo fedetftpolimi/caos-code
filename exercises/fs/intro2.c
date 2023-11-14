@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   /* Assuming intro(n-1).c executed */
   int fd = open("dir/test2.txt", O_RDONLY);
   if (fd == -1) {
-    perror("Error opening file");
+    printf("Error opening file");
     return 1;
   }
   printf("Succesfully opened symlink\n");
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
   int fd2 = creat("test.txt", 0644);
   fd = open("dir/test2.txt", O_RDONLY);
   if (fd == -1) {
-    perror("Error opening file");
+    printf("Error opening file");
     return 1;
   }
   printf("Succesfully opened symlink\n");

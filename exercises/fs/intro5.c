@@ -6,10 +6,9 @@
 #include <unistd.h>
 
 int main() {
-  const char *dirname = "example2";
+  const char *dirname = "example";
 
-  // Create a directory (you may want to check for errors in a real-world
-  // scenario)
+  // Create a directory 
   if (mkdir(dirname, 0777) == -1) {
     printf("Error creating directory\n");
     return 1;
@@ -20,7 +19,8 @@ int main() {
   if (rmdir(dirname) == -1) {
     printf("Error removing directory");
     return 1;
-  } else {
+  }
+  else {
     printf("Directory removed successfully.\n");
   }
 

@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
   }
   fd = open("dir/test2.txt", O_RDONLY);
   if (fd == -1) {
-    perror("Error opening file");
+    printf("Error opening file");
     return 1;
   }
   printf("Succesfully opened symlink\n");

@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
   DIR *dir = opendir(argv[1]);
   if (dir == NULL) {
-    perror("opendir");
+    printf("opendir");
     return 1;
   }
 
