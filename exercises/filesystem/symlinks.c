@@ -8,12 +8,12 @@
 
 int main(int argc, char *argv[]) {
   /* Execute one instructions at a time to check the expected behavior */
-  mkdir("dir", 0644);
+  mkdir("dir", 0664);
   /* What's the goal here? */
   int fd = creat("test.txt", 0644);
   /* What happens after this line of code? */
   close(fd);
-  int val = 1;
+  int val = 0;
   /* What's the diff b/w these two cases? */
   switch (val) {
   case 0:
