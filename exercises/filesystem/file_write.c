@@ -7,22 +7,24 @@
 #include <unistd.h>
 
 int main(int argc, char *argv[]) {
-  /* Assuming intro(n-1).c created dir */
+  /* What happens? What's missing? */
+  mkdir("dir", 0644); //
+  /* What's the difference b/w those two functions? */
   int fd = creat("dir/test3.txt", 0644);
+  /* fd = open("dir/test3.txt", O_RDWR); */
   if (fd == -1) {
     printf("Error opening file");
     return 1;
   }
-  fd = open("dir/test3.txt", O_RDWR);
 
-  const char *content = "Hello world\n";
+  const char *content = "Hello from the other side!\n";
   ssize_t bytes_written = write(fd, content, strlen(content));
   printf("%zd bytes written to the file.\n", bytes_written);
 
   char buffer[100];
   for (int i = 0; i < 10; i++) {
     // Use sprintf to format the string
-    sprintf(buffer, "Hello world, iteration %d\n", i);
+    sprintf(buffer, "Hello world! Iteration %d\n", i);
 
     // Use write to write the formatted string to the file
     ssize_t bytes_written = write(fd, buffer, strlen(buffer));

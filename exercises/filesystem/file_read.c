@@ -7,7 +7,7 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-  /* Assuming intro(n-1).c succeeded */
+  /* Assuming file_write.c succeeded */
   int fd = open("dir/test3.txt", O_RDONLY);
   if (fd == -1) {
     /* Why 2? */
