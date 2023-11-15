@@ -29,3 +29,7 @@
 2. [Shell1](processes/shell_bugous.c)
 2. [Shell2](processes/shell.c)
 3. [Memory sharing](filesystem/var_sharing.c)
+
+#### Final
+1. [Exercise 1](processes/exer1.c)
+2. [Exercise 2](processes/exer2.c)
