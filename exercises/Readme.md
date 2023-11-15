@@ -26,5 +26,6 @@
 
 #### Advanced
 1. [Zombie](processes/zombie.c)
-2. [Shell](filesystem/shell.c)
+2. [Shell1](processes/shell_bugous.c)
+2. [Shell2](processes/shell.c)
 3. [Memory sharing](filesystem/var_sharing.c)
