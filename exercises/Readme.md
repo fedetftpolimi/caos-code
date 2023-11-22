@@ -3,6 +3,9 @@
 ### Flowcharts and C recap
 * [Comparison](c/comparison.c)
 * [Average](c/average.c)
+* [Repeated Comparison](c/comparison_loop.c)
+* [Repeated Average](c/average_loop.c)
+* [Square of a number](c/square.c)
 
 ### File system
 
