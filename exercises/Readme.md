@@ -3,6 +3,9 @@
 ### Flowcharts and C recap
 * [Comparison](c/comparison.c)
 * [Average](c/average.c)
+* [Repeated Comparison](c/comparison_loop.c)
+* [Repeated Average](c/average_loop.c)
+* [Square of a number](c/square.c)
 
 ### File system
 
@@ -29,3 +32,7 @@
 2. [Shell1](processes/shell_bugous.c)
 2. [Shell2](processes/shell.c)
 3. [Memory sharing](filesystem/var_sharing.c)
+
+#### Final
+1. [Exercise 1](processes/exer1.c)
+2. [Exercise 2](processes/exer2.c)
