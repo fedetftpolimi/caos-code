@@ -1,6 +1,7 @@
 # ccls
-*.ccls-cache/
-../.ccls-cache/
+.ccls-cache/
+# binary
+*.out
 # Prerequisites
 *.d
 
