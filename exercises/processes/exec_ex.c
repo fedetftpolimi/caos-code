@@ -9,12 +9,11 @@
 int main(int argc, char *argv[]) {
   pid_t pidget = getpid();
   printf("Original process has pid: %d\n", pidget);
-  // check htop/top after this
-  // Funziona solo sotto WSL/WSL2
-  /* execlp("notepad.exe", NULL); */
-
+  // Try to execute either execlp or execl to understand the differences between
+  // the two
   /* execlp("ls", "ls", "-l", "--color=always", NULL); */
   execl("./args_printing.out", "args_printing.out", "do", "i", "wanna", "know", NULL);
-  printf("Exec error");
+  // What is the output of the following printf?
+  printf("Original process has pid: %d\n", pidget);
   return 0;
 }
