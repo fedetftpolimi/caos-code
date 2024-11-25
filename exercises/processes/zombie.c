@@ -1,20 +1,20 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-int main(int argc, char *argv[]) {
-  while (1) {
-    printf("Press Enter to execute ls");
-    while (getchar() != '\n')
-      ;
-    if (!fork()) {
-      /* printf("child\n"); */
-      /* execlp("ls", "ls", NULL); */
-      sleep(2);
-      exit(7);
-    } /* else { */
-    /*   printf("father\n"); */
-    /* } */
+int main() {
+  pid_t pid;
+  for (int i = 0; i < 5; i++) {
+    pid = fork();
+    if (pid > 0) {
+      // Parent, do nothing
+    } else {
+      // Child, just exit
+      exit(0);
+    }
   }
+  // only executed by parent, the children already exited
+  sleep(50);
+
   return 0;
 }
