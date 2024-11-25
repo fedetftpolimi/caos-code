@@ -12,8 +12,9 @@ int main(int argc, char *argv[]) {
   // check htop/top after this
   // Funziona solo sotto WSL/WSL2
   /* execlp("notepad.exe", NULL); */
+
   /* execlp("ls", "ls", "-l", "--color=always", NULL); */
-  execl("./forksup.out", "forksup.out", "do", "i", "wanna", "know", NULL);
+  execl("./args_printing.out", "args_printing.out", "do", "i", "wanna", "know", NULL);
   printf("Exec error");
   return 0;
 }

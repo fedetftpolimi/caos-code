@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
   while (1) {
@@ -7,9 +8,10 @@ int main(int argc, char *argv[]) {
     while (getchar() != '\n')
       ;
     if (!fork()) {
-      sleep(10);
       /* printf("child\n"); */
-      execlp("ls", "ls", NULL);
+      /* execlp("ls", "ls", NULL); */
+      sleep(2);
+      exit(7);
     } /* else { */
     /*   printf("father\n"); */
     /* } */
