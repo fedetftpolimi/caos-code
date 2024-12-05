@@ -9,7 +9,7 @@ int main()
     if(pid == 0)
     {
         execl("args", "args", NULL);
-        printf("Error: exec failed");
+        printf("Error: exec failed\n");
         return 1;
     } else {
         printf("Waiting for child %d\n", pid);
