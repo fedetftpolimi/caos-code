@@ -9,11 +9,10 @@
 int main(int argc, char *argv[]) {
   pid_t pidget = getpid();
   printf("Original process has pid: %d\n", pidget);
-  // check htop/top after this
-  // Funziona solo sotto WSL/WSL2
-  /* execlp("notepad.exe", NULL); */
-  /* execlp("ls", "ls", "-l", "--color=always", NULL); */
-  execl("./forksup.out", "forksup.out", "do", "i", "wanna", "know", NULL);
-  printf("Exec error");
+  // This call require the binary file args_printing.out to be present in the
+  // process working directory
+  execl("./args_printing.out", "args_printing.out", "do", "i", "wanna", "know", NULL);
+  // What is the output of the following printf?
+  printf("Original process has pid: %d\n", pidget);
   return 0;
 }

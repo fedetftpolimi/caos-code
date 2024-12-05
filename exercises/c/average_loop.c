@@ -3,17 +3,16 @@
 
 int main(int argc, char *argv[]) {
   float sum = 0;
-  int n = 0;
+  int n = 1;
   float x;
-  printf("Insert number\n");
-  scanf("%f", &x);
-
-  while (x != 0) {
+  do {
+    printf("Insert number\n");
+    scanf("%f", &x);
     sum += x;
     n += 1;
-    printf("Insert number");
-    scanf("%f", &x);
-  }
+  }  while (x != 0);
+
+  n--;
 
   if (n == 0) {
     printf("No number inserted, avg = 0 \n");

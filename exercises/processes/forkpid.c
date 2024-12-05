@@ -7,8 +7,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   pid_t pidfork, pidget;
 
   pidfork = fork();
@@ -17,12 +16,11 @@ int main(int argc, char *argv[])
     sleep(15);
     pidget = getpid();
     printf("Child with pid: %d\n", pidget);
-  }
-  else {
+  } else {
     sleep(15);
     pidget = getpid();
     printf("Parent with pid: %d, my child has pid %d\n", pidget, pidfork);
   }
-  
+
   return 0;
 }

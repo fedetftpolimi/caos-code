@@ -8,16 +8,16 @@
 
 int main(int argc, char *argv[]) {
   /* What happens? What's missing? */
-  mkdir("dir", 0644); //
+  mkdir("dir2", 0777); //
   /* What's the difference b/w those two functions? */
-  int fd = creat("dir/test3.txt", 0644);
+  int fd = creat("dir2/test3.txt", 0644);
   /* fd = open("dir/test3.txt", O_RDWR); */
   if (fd == -1) {
     printf("Error opening file");
     return 1;
   }
 
-  const char *content = "Hello from the other side!\n";
+  char *content = "Hello from the other side!\n";
   ssize_t bytes_written = write(fd, content, strlen(content));
   printf("%zd bytes written to the file.\n", bytes_written);
 

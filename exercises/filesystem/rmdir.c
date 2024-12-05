@@ -5,24 +5,19 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-int main() {
-  const char *dirname = "example";
-
-  // Create a directory 
-  if (mkdir(dirname, 0777) == -1) {
-    printf("Error creating directory\n");
+int main(int argc, char *argv[]) {
+  /* const char *dirname = "example"; */
+  if (argc != 2) {
+    printf("Usage: %s <directory_path>\n", argv[0]);
     return 1;
   }
-  int fd = creat("example/test.txt", 0644);
+  char *dirname = argv[1];
 
   // Use rmdir to remove the directory
   if (rmdir(dirname) == -1) {
-    printf("Error removing directory");
+    printf("Error removing directory\n");
     return 1;
-  }
-  else {
-    printf("Directory removed successfully.\n");
-  }
-
+  } 
+  printf("Directory removed successfully.\n");
   return 0;
 }
