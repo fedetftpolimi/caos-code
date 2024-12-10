@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
   char buffer[100];
   for (int i = 0; i < 10; i++) {
     // Use sprintf to format the string
-    sprintf(buffer, "Hello world! Iteration %d\n", i);
+    sprintf(buffer, "Hello world! Iteration number %d\n", i);
 
     // Use write to write the formatted string to the file
     ssize_t bytes_written = write(fd, buffer, strlen(buffer));

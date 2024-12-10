@@ -1,5 +1,4 @@
 /* List Files with a Specific Extension */
-
 #include <dirent.h>
 #include <stdio.h>
 #include <string.h>

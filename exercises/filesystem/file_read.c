@@ -1,17 +1,17 @@
-#include <stdio.h>
 #include <assert.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
-#include <unistd.h>
+#include <stdio.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[]) {
   /* Assuming file_write.c succeeded */
   int fd = open("dir2/test3.txt", O_RDONLY);
   if (fd == -1) {
-    /* Why 2? */
     printf("Error opening file");
+    /* Why 1? */
     return 1;
   }
   char buffer[13];
@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
     printf("Bytes read: %zd, Read chunk %d: ", bytes_read, i);
     // A flush is required here, printf is buffering!
     /* fflush(stdout); */
+    // What is 1?
     write(1, buffer, bytes_read);
     bytes_read = read(fd, buffer, sizeof(buffer));
     i++;
