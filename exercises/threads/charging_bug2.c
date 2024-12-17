@@ -4,15 +4,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-pthread_mutex_t mutexCharge;
+pthread_mutex_t battery;
 int charge = 0;
 
 void *charging_station(void *arg) {
   for (;;) {
-    pthread_mutex_lock(&mutexCharge);
+    pthread_mutex_lock(&battery);
     charge += 10; // Adding charge
     printf("Charging station: Added 15 units. Total charge: %d\n", charge);
-    pthread_mutex_unlock(&mutexCharge);
+    pthread_mutex_unlock(&battery);
     sleep(3); // Simulate charging time
   }
   return NULL;
@@ -20,14 +20,14 @@ void *charging_station(void *arg) {
 
 void *bike(void *arg) {
   for (;;) {
-    pthread_mutex_lock(&mutexCharge);
+    pthread_mutex_lock(&battery);
     while (charge < 25) { // Check if enough charge is available
-      printf("Bike: Not enough charge. Waiting...\n");
+      printf("Low battery\n");
       sleep(1);
     }
     charge -= 25; // Consume charge
     printf("Bike: Discharged battery, remaining: %d\n", charge);
-    pthread_mutex_unlock(&mutexCharge);
+    pthread_mutex_unlock(&battery);
     sleep(2); // Simulate discharging time
   }
   return NULL;
@@ -35,7 +35,7 @@ void *bike(void *arg) {
 
 int main(int argc, char *argv[]) {
   pthread_t threads[2];
-  pthread_mutex_init(&mutexCharge, NULL);
+  pthread_mutex_init(&battery, NULL);
 
   // Create threads for bike and charging station
   if (pthread_create(&threads[0], NULL, &bike, NULL) != 0) {
@@ -52,6 +52,6 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  pthread_mutex_destroy(&mutexCharge);
+  pthread_mutex_destroy(&battery);
   return 0;
 }
