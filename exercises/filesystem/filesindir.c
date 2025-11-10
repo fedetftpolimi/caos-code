@@ -6,10 +6,10 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  if (argc != 2) {
-    printf("Usage: %s <directory_path>\n", argv[0]);
-    return 1;
-  }
+  /* if (argc != 2) { */
+  /*   printf("Usage: %s <directory_path>\n", argv[0]); */
+  /*   return 1; */
+  /* } */
 
   DIR *dir = opendir(argv[1]);
   if (dir == NULL) {
@@ -19,19 +19,10 @@ int main(int argc, char *argv[]) {
 
   struct dirent *entry;
   entry = readdir(dir);
-  /* int x; */
-  int counter = 0;
   while (entry != NULL) {
     printf("%s\n", entry->d_name);
     entry = readdir(dir);
-    counter++;
   }
-
-  /* while ( (entry = readdir(dir)) != NULL) { */
-  /*   printf("%s\n", entry->d_name); */
-  /*   scanf(""); */
-  /* } */
-  printf("%d\n", counter);
 
   closedir(dir);
   return 0;
