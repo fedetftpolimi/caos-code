@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     // Update the variables 
     prev1 = prev2;
     prev2 = cur;
-    n--;
+    n--; // n -= 1
   }
   printf("\n");
 
