@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
   /*   printf("%s\n", entry->d_name); */
   /*   scanf(""); */
   /* } */
-  printf("%d\n", counter)
+  printf("%d\n", counter);
 
   closedir(dir);
   return 0;
