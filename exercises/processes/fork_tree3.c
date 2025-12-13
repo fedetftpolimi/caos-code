@@ -9,4 +9,5 @@ int main() {
   a *= 2;
   fork();
   a *= 2;
+  printf("%d (%d): %d\n", getpid(), getppid(), a);
 }

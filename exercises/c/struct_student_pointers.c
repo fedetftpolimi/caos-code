@@ -14,7 +14,7 @@ Student *createStudent(int id, const char *name, const char *surname) {
     return NULL; // allocation failed
   }
 
-  s->id = id;
+  s->id = id; // = (*s).id
   strcpy(s->name, name);
   strcpy(s->surname, surname);
 

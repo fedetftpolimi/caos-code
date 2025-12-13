@@ -21,9 +21,9 @@ typedef struct {
 } Student;
 
 Course *createCourse(unsigned id, const char *name) {
-  Course *c = malloc(sizeof(Course));
+  Course *c = (Course *)malloc(sizeof(Course));
   c->id = id;
-  strncpy(c->name, name, MAX_STR_LEN - 1);
+  strcpy(c->name, name);
   c->name[MAX_STR_LEN - 1] = '\0';
   return c;
 }
@@ -34,7 +34,7 @@ Student *createStudent(unsigned id, const char *name, const char *surname,
   Student *s = malloc(sizeof(Student));
 
   s->id = id;
-  strncpy(s->name, name, MAX_STR_LEN - 1);
+  strcpy(s->name, name);
   s->name[MAX_STR_LEN - 1] = '\0';
 
   strncpy(s->surname, surname, MAX_STR_LEN - 1);
@@ -79,8 +79,10 @@ int main() {
   printf("\n=== Student 1 ===\n");
   printf("ID: %u\nName: %s %s\n", s1->id, s1->name, s1->surname);
   for (int i = 0; i < s1->courseCount; i++) {
+    /* Course *cc = &(s1->courses[i]); */
     printf("Course: %-12s (ID %u)  Grade: %d\n",
         s1->courses[i].name, s1->courses[i].id, s1->grades[i]);
+           /* cc->name, cc->id, s1->grades[i]); */
   }
 
   // Print student 2
