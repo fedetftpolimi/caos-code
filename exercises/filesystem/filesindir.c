@@ -6,12 +6,13 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  /* if (argc != 2) { */
-  /*   printf("Usage: %s <directory_path>\n", argv[0]); */
-  /*   return 1; */
-  /* } */
+  if (argc != 2) {
+    printf("Usage: %s <directory_path>\n", argv[0]);
+    return 1;
+  }
 
-  DIR *dir = opendir(argv[1]);
+  char *dirname = argv[1];
+  DIR *dir = opendir(dirname);
   if (dir == NULL) {
     printf("opendir failed!");
     return 1;
@@ -27,6 +28,3 @@ int main(int argc, char *argv[]) {
   closedir(dir);
   return 0;
 }
-
-// opendir
-// readdir

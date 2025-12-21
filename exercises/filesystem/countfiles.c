@@ -8,7 +8,8 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  DIR *dir = opendir(argv[1]);
+  char *dirname = argv[1];
+  DIR *dir = opendir(dirname);
   if (dir == NULL) {
     printf("opendir");
     return 1;
