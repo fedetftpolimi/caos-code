@@ -11,7 +11,8 @@ int main(int argc, char *argv[]) {
   printf("Original process has pid: %d\n", pidget);
   // This call require the binary file args_printing.out to be present in the
   // process working directory
-  execl("./args_printing.out", "args_printing.out", "do", "i", "wanna", "know", NULL);
+  execl("./args_printing.out", "args_printing.out", "do", "i", "wanna", "know?",
+        "sad", "to", "see", "you", "go", NULL);
   // What is the output of the following printf?
   printf("Original process has pid: %d\n", pidget);
   return 0;
