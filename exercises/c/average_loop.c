@@ -2,22 +2,21 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-  float sum = 0;
+  float acc = 0;
   int n = 1;
   float x;
   do {
     printf("Insert number\n");
     scanf("%f", &x);
-    sum += x;
+    acc += x;
     n += 1;
-  }  while (x != 0);
+  } while (x != 0);
 
-  n--;
-
-  if (n == 0) {
+  if (n == 1) {
     printf("No number inserted, avg = 0 \n");
   } else {
-    printf("Avg = %f\n", sum / n);
+    n--;
+    printf("Avg = %f\n", acc / n);
   }
 
   return 0;

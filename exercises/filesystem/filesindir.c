@@ -11,7 +11,8 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  DIR *dir = opendir(argv[1]);
+  char *dirname = argv[1];
+  DIR *dir = opendir(dirname);
   if (dir == NULL) {
     printf("opendir failed!");
     return 1;
@@ -19,23 +20,11 @@ int main(int argc, char *argv[]) {
 
   struct dirent *entry;
   entry = readdir(dir);
-  /* int x; */
-  int counter = 0;
   while (entry != NULL) {
     printf("%s\n", entry->d_name);
     entry = readdir(dir);
-    counter++;
   }
-
-  /* while ( (entry = readdir(dir)) != NULL) { */
-  /*   printf("%s\n", entry->d_name); */
-  /*   scanf(""); */
-  /* } */
-  printf("%d\n", counter)
 
   closedir(dir);
   return 0;
 }
-
-// opendir
-// readdir
