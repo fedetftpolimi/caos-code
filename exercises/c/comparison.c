@@ -2,22 +2,20 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-  printf("START\n");
-  int A, B;
+  int a, b;
   printf("Insert first number\n");
-  scanf("%d", &A);
+  scanf("%d", &a);
   printf("Insert second number\n");
-  scanf("%d", &B);
-  printf("A = %d, B = %d\n", A, B);
-  if (A == B) {
-    printf("A = B\n");
+  scanf("%d", &b);
+  printf("a = %d, b = %d\n", a, b);
+  if (a == b) {
+    printf("a = b\n");
   }
-  else if (A > B) {
-    printf("A greater than B\n");
+  else if (a > b) {
+    printf("a greater than b\n");
   }
   else {
-    printf("A less than B\n");
+    printf("a less than b\n");
   }
-  printf("END\n");
   return 0;
 }
