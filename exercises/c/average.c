@@ -1,17 +1,15 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  printf("START\n");
-  float A, B, Y;
-  printf("Insert A\n");
-  scanf("%f", &A);
-  printf("Insert B\n");
-  scanf("%f", &B);
+  float a, b, m;
+  printf("Insert a\n");
+  scanf("%f", &a);
+  printf("Insert b\n");
+  scanf("%f", &b);
 
-  Y = (A + B) / 2;
+  c = (a + b) / 2;
 
-  printf("Average = %f\n", Y);
-  printf("END\n");
+  printf("Average = %f\n", c);
 
   return 0;
 }

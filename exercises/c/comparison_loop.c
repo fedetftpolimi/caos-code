@@ -3,20 +3,20 @@
 
 int main(int argc, char *argv[]) {
 
-  int A, B;
+  int a, b;
 
   do {
     printf("Insert first number greater than or equal to 0\n");
-    scanf("%d", &A);
+    scanf("%d", &a);
     printf("Insert second number greater than or equal to 0\n");
-    scanf("%d", &B);
-    if (A > B) {
-      printf("A greater than B\n");
-    } else if (A<B) {
-      printf("A smaller than B\n");
+    scanf("%d", &b);
+    if (a > b) {
+      printf("a greater than b\n");
+    } else if (a<b) {
+      printf("a smaller than b\n");
     } else {
-      printf("A equal to B, exit\n");
+      printf("a equal to b, exit\n");
     }
-  } while (A != B);
+  } while (a != b);
   return 0;
 }
